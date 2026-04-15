@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>xfoz</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="fira_code.css">
+        <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <main>
+            <section>
+                <h1>
+                    <div>xfoz</div>
+                    <div class="tld">.dev</div>
+                </h1>
+                <div class="under-construction">
+                    <span>Is under</span>
+                    <div id="rotation-panel">
+                        <span class="construction">Construction</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="socials">
+                <a href="https://www.instagram.com/xfoscarz/" target="_blank">
+                    <span>@</span>
+                    <span class="instagram">xfoscarz</span>
+                </a>
+                <a href="https://github.com/xfoscarz" target="_blank">
+                    <span>
+                        <img style="filter: invert(1); width: 1.4em;" src="/public/github.png" alt="G">
+                    </span>
+                    <span>xfoscarz</span>
+                </a>
+            </section>
+        </main>
+
+        <script>
+            // Quick scripts haha
+            window.addEventListener("load", async () => {
+                const $ = s => document.querySelector(s);
+                const test = $("#test");
+
+                const construction = $(".construction");
+                const panel = $("#rotation-panel");
+
+                setInterval(() => {
+                    construction.classList.toggle("blink");
+                }, 700);
+
+                panel.addEventListener("mousemove", event => {
+                    let [ x, y ] = [ event.clientX, event.clientY ];
+                    const rect = panel.getBoundingClientRect();
+
+                    const mx = 30;
+                    const my = 10;
+
+                    x -= rect.x;
+                    x /= rect.width;
+                    x -= 0.5;
+                    y -= rect.y;
+                    y /= rect.height;
+                    y -= 0.5;
+
+                    panel.style.transform = `perspective(${panel.clientWidth}px) rotateX(${mx * -y}deg) rotateY(${my * x}deg)`;
+                });
+
+                panel.addEventListener("mouseleave", () => {
+                    panel.style.transform = "";
+                });
+            });
+        </script>
+    </body>
+</html>

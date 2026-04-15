@@ -1,0 +1,202 @@
+@font-face {
+    font-family: "Arena";
+    src: url("/public/Arena.ttf");
+}
+
+@font-face {
+    font-family: "Arena";
+    font-style: italic;
+    src: url("/public/ArenaItalic.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("/public/Montserrat.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("/public/Montserrat-Italic.ttf");
+    font-style: italic;
+}
+
+:root {
+    background-image: url("/public/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    font-family: "Montserrat";
+    font-weight: 700;
+}
+
+::selection {
+    background: #9dccff5e;
+}
+
+html, body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+    display: flex;
+    min-height: 100dvh;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15em;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    padding: 4em;
+    width: fit-content;
+    border-radius: 15px;
+    color: #76cdff;
+}
+
+@media screen and (max-width: 1300px) {
+    main {
+        align-items: center;
+    }
+
+    section {
+        align-items: center;
+    }
+
+    .under-construction {
+        flex-direction: column!important;
+    }
+
+    h1 {
+        font-size: 12vw !important;
+    }
+
+    .under-construction {
+        font-size: 5vw !important;
+        gap: 1vw !important;
+    }
+
+    .socials * {
+        font-size: 2.5vw !important;
+    }
+
+    .socials a {
+        opacity: 1 !important;
+    }
+
+    #rotation-panel {
+        background: #9dccffd5 !important;
+    }
+}
+
+h1 {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding-bottom: 0.5em;
+    font-family: "Montserrat";
+    border-radius: 100px;
+    width: fit-content;
+    font-size: 8rem;
+}
+
+h1 div {
+    display: inline;
+}
+
+h1 div.tld {
+    color: #50bfff;
+}
+
+.under-construction {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    font-size: 4.5rem;
+}
+
+.under-construction span {
+    color: #0093ff;
+}
+
+#rotation-panel::after,
+.construction {
+    display: inline-block;
+    color: #0071e3;
+    font-family: "Fira Code";
+    font-weight: 800;
+}
+
+#rotation-panel .construction {
+    transform: translateZ(30px);
+    text-shadow: none;
+}
+
+.construction::after {
+    content: "|";
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+.construction.blink::after {
+    opacity: 1;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    padding: 2em 3em;
+    font-weight: 500;
+}
+
+.socials * {
+    font-size: 1em;
+}
+
+.socials span {
+    display: flex;
+}
+
+.socials a {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    color: #ffffff;
+    background: #000000;
+    border-radius: 100px;
+    padding: 0.5em 0.7em;
+    gap: 5px;
+    cursor: alias;
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.25s, transform 0.25s;
+}
+
+.socials a:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+.socials .instagram {
+    color: transparent;
+    background: linear-gradient(130deg, #515bd4 30%, #8134af 40%, #dd2a7b 70%, #feda77 80%, #f58529);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+#rotation-panel {
+    position: relative;
+    display: inline-block;
+    cursor: default;
+    background: #9dccffa5;
+    padding: 15px;
+    transition: transform 0.15s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+    border-radius: 5px;
+}
