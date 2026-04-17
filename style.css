@@ -44,13 +44,12 @@ main {
     min-height: 100dvh;
     flex-direction: column;
     justify-content: center;
-    gap: 15em;
 }
 
 section {
     display: flex;
     flex-direction: column;
-    padding: 4em;
+    padding: 6em 4em;
     width: fit-content;
     border-radius: 15px;
     color: #76cdff;
