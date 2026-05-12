@@ -21,7 +21,8 @@
 }
 
 :root {
-    background-image: url("/public/background.jpg");
+    /* background-image: url("/public/background.jpg"); */
+    background: linear-gradient(316deg, #ffffff, #daf1f7);
     background-size: cover;
     background-repeat: no-repeat;
 
